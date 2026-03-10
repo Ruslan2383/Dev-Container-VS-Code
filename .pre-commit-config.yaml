@@ -1,0 +1,34 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 24.3.0
+    hooks:
+      - id: black
+        language_version: python3.11
+
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.5.0
+    hooks:
+      - id: ruff
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.10.0
+    hooks:
+      - id: mypy
+        additional_dependencies: ["types-requests"]
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.3.0
+    hooks:
+      - id: prettier
+        files: "\\.(js|jsx|ts|tsx|json|yml|yaml|md)$"
+
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.12.0
+    hooks:
+      - id: hadolint
+
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.35.0
+    hooks:
+      - id: yamllint
